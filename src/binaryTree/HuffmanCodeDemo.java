@@ -5,15 +5,48 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
-
-// 修改00111
-
 public class HuffmanCodeDemo {
     public static void main(String[] args) {
+
         // test Huffman编码
         String str = "i like like like java do you like a java";
+        getHuffmanCode(str);
+    }
+
+    // 将字符串转化为Huffman编码
+    public static void getHuffmanCode(String str){
+        // 通过str创建哈夫曼树
         Node3 root = createHuffmanTree(str);
-        root.preOrder();
+        // 输出创建的哈夫曼树对应的哈夫曼编码
+        getHuffmanNodes(root, "", new StringBuilder());
+
+        // 将字符串转化为Huffman编码
+        StringBuilder stringBuilder = new StringBuilder();
+        byte[] byteArray = str.getBytes();
+        for(byte ele : byteArray){
+            stringBuilder.append(huffmanCode.get(ele));
+        }
+        System.out.println(stringBuilder);
+    }
+
+    // huffmanCode用来存储字符和编码的对应关系
+    static HashMap<Byte, StringBuilder> huffmanCode = new HashMap<>();
+
+    // 将Huffman编码表存放在Map中
+    public static void getHuffmanNodes(Node3 node, String code, StringBuilder stringBuilder){
+        // 先将上层string保存，并将code拼接
+        StringBuilder stringBuilder2 = new StringBuilder(stringBuilder);
+        stringBuilder2.append(code);
+
+        // 判断该节点是否是叶子结点
+        if(node.data == null){
+            // 说明该节点是非叶子结点,非叶子结点一定会有所有结点的
+            getHuffmanNodes(node.left, "0", stringBuilder2);
+            getHuffmanNodes(node.right, "1", stringBuilder2);
+        }else{
+            // 如果是叶子结点，则将键值对保存
+            huffmanCode.put(node.data, stringBuilder2);
+        }
     }
 
     // 创建Huffman树
