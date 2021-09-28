@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.HashMap;
 
 
-// ÐÞ¸Ä00
+// ÐÞ¸Ä11
 
 public class HuffmanCodeDemo {
     public static void main(String[] args) {
