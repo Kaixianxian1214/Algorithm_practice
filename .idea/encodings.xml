@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/src/arraystack/Calculator.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/arraystack/InfixToSuffix.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/arraystack/PolandCal.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/binaryTree/BinaryTreeDemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/binaryTree/HuffmanCodeDemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/binaryTree/ThreadedBinaryTreeDemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/hashTable/HashTableDemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/linkedlist/DoubleLinkedList_Test.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/linkedlist/SingleLinkedList_Test.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/queue/ArrayQueue.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/searchalgorithm/Search.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/sortalgorithm/Sort.java" charset="GBK" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
