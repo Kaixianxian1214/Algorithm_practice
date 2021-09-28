@@ -1,0 +1,2 @@
+module Algorithm_practice {
+}
