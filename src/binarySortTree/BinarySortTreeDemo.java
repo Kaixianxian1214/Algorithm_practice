@@ -2,19 +2,23 @@ package binarySortTree;
 
 public class BinarySortTreeDemo {
     public static void main(String[] args) {
-        int[] array = {7, 3, 10, 12, 5, 1, 9};
+        int[] array = {7, 3, 10, 12, 5, 1, 9, 2};
         BinarySortTree tree = new BinarySortTree();
         for(int i : array){
             tree.addNode(new Node(i));
         }
+        tree.infixOrder();
+        tree.delNode(7);
+        System.out.println("É¾³ıºó:");
+        tree.infixOrder();
     }
 }
 
-// åˆ›å»ºæ ‘
+// ´´½¨Ê÷
 class BinarySortTree{
-    Node root;    // æ ¹èŠ‚ç‚¹
+    Node root;    // ¸ù½Úµã
 
-    // æ·»åŠ èŠ‚ç‚¹
+    // Ìí¼Ó½Úµã
     public void addNode(Node node){
         if(root == null){
             root = node;
@@ -23,7 +27,7 @@ class BinarySortTree{
         }
     }
 
-    // åˆ é™¤ç»“ç‚¹
+    // É¾³ı½áµã
     public void delNode(int val) {
         if(root == null){
             return;
@@ -31,67 +35,77 @@ class BinarySortTree{
 
         Node target = searchNode(val);
         if(target == null){
-            // å½“æ²¡æœ‰æ‰¾åˆ°è¦åˆ é™¤çš„å€¼
+            // µ±Ã»ÓĞÕÒµ½ÒªÉ¾³ıµÄÖµ
             return;
         }
-        // è·å–parent
+        // »ñÈ¡parent
         Node parent = searchParent(val);
 
-        // åˆ é™¤çš„ç»“ç‚¹æ˜¯å¶å­ç»“ç‚¹
+        // É¾³ıµÄ½áµãÊÇÒ¶×Ó½áµã
         if(target.left == null && target.right == null){
             if(target.val == root.val){
-                // æ˜¯å¤´ç»“ç‚¹
+                // ÊÇÍ·½áµã
                 root = null;
                 return;
             }else if(parent.left.val == target.val){
-                // æ˜¯çˆ¶ç»“ç‚¹çš„å·¦å­©å­
+                // ÊÇ¸¸½áµãµÄ×óº¢×Ó
                 parent.left = null;
             }else{
-                // æ˜¯çˆ¶ç»“ç‚¹çš„å³å­©å­
+                // ÊÇ¸¸½áµãµÄÓÒº¢×Ó
                 parent.right = null;
             }
         }else if(target.left != null && target.right == null){
-            // åˆ é™¤çš„ç»“ç‚¹æ²¡æœ‰å³å­ç»“ç‚¹ï¼Œæœ‰å·¦å­ç»“ç‚¹
+            // É¾³ıµÄ½áµãÃ»ÓĞÓÒ×Ó½áµã£¬ÓĞ×ó×Ó½áµã
+            if(parent == null){
+                // µ±É¾³ıµÄ½áµãÊÇ¸ù½ÚµãÊ±
+                root = target.left;
+                return;
+            }
             if(parent.left.val == target.val){
-                // æ˜¯çˆ¶ç»“ç‚¹çš„å·¦å­ç»“ç‚¹
+                // ÊÇ¸¸½áµãµÄ×ó×Ó½áµã
                 parent.left = target.left;
             }else{
-                // æ˜¯çˆ¶ç»“ç‚¹çš„å³å­ç»“ç‚¹
+                // ÊÇ¸¸½áµãµÄÓÒ×Ó½áµã
                 parent.right = target.left;
             }
         }else if(target.left == null && target.right != null){
-            // åˆ é™¤çš„ç»“ç‚¹æ²¡æœ‰å·¦å­ç»“ç‚¹ï¼Œæ²¡æœ‰å³å­ç»“ç‚¹
+            if(parent == null){
+                // µ±É¾³ıµÄ½áµãÊÇ¸ù½ÚµãÊ±
+                root = target.right;
+                return;
+            }
+            // É¾³ıµÄ½áµãÃ»ÓĞ×ó×Ó½áµã£¬Ã»ÓĞÓÒ×Ó½áµã
             if(parent.left.val == target.val){
-                // æ˜¯çˆ¶ç»“ç‚¹çš„å·¦å­ç»“ç‚¹
+                // ÊÇ¸¸½áµãµÄ×ó×Ó½áµã
                 parent.left = target.right;
             }else{
-                // æ˜¯çˆ¶ç»“ç‚¹çš„å³å­ç»“ç‚¹
+                // ÊÇ¸¸½áµãµÄÓÒ×Ó½áµã
                 parent.right = target.right;
             }
         }else{
-            // åˆ é™¤çš„ç»“ç‚¹æ—¢æœ‰å·¦å­ç»“ç‚¹ï¼Œåˆæœ‰å³å­ç»“ç‚¹ --> æ‰¾åˆ°targetçš„æœ€å·¦å­ç»“ç‚¹æ¥æ›¿æ¢
+            // É¾³ıµÄ½áµã¼ÈÓĞ×ó×Ó½áµã£¬ÓÖÓĞÓÒ×Ó½áµã --> ÕÒµ½targetµÄ×î×ó×Ó½áµãÀ´Ìæ»»
             Node temp = target.left;
             while(temp.right != null){
                 temp = temp.right;
             }
-            // æ›¿æ¢ç›®æ ‡ç»“ç‚¹çš„å€¼
-            target.val = temp.val;
-            // åˆ é™¤æœ€å·¦å­ç»“ç‚¹
-            Node tempParent = root.searchParent(temp.val);
-            tempParent.right = null;
+            int trans = temp.val;
+            // Ìæ»»Ä¿±ê½áµãµÄÖµ
+            temp = null;
+            target.val = trans;
+            // É¾³ı×î×ó×Ó½áµã
         }
     }
 
-    // ä¸­åºéå†
+    // ÖĞĞò±éÀú
     public void infixOrder(){
         if(root == null){
-            System.out.println("äºŒå‰æ’åºæ ‘ç©ºï½");
+            System.out.println("¶ş²æÅÅĞòÊ÷¿Õ¡«");
             return;
         }
         root.infixOrder();
     }
 
-    // æŸ¥æ‰¾ç»“ç‚¹
+    // ²éÕÒ½áµã
     public Node searchNode(int val){
         if(root == null){
             return  null;
@@ -100,7 +114,7 @@ class BinarySortTree{
         }
     }
 
-    // æŸ¥æ‰¾parent
+    // ²éÕÒparent
     public Node searchParent(int val){
         if(root == null){
             return  null;
@@ -111,7 +125,7 @@ class BinarySortTree{
 }
 
 
-// NodeèŠ‚ç‚¹
+// Node½Úµã
 class Node {
     public int val;
     public Node left;
@@ -121,16 +135,16 @@ class Node {
         this.val = val;
     }
 
-    // æŸ¥æ‰¾ä¸€ä¸ªç»“ç‚¹çš„parent
+    // ²éÕÒÒ»¸ö½áµãµÄparent
     public Node searchParent(int val){
         if((this.left != null && this.left.val == val) || (this.right != null && this.right.val == val)){
             return this;
         }else{
             if(this.left != null && val < this.val){
-                // å·¦é€’å½’
+                // ×óµİ¹é
                 return this.left.searchParent(val);
             }else if(this.right != null && val > this.val){
-                // å³é€’å½’
+                // ÓÒµİ¹é
                 return this.right.searchParent(val);
             }else{
                 return null;
@@ -138,52 +152,52 @@ class Node {
         }
     }
 
-    // æŸ¥æ‰¾æŸä¸€ä¸ªç»“ç‚¹
+    // ²éÕÒÄ³Ò»¸ö½áµã
     public Node searchNode(int val){
         if(this.val == val){
             return this;
         }
         if(this.left != null && val < this.val){
-            // å·¦é€’å½’
+            // ×óµİ¹é
             return this.left.searchNode(val);
         }else if(this.right != null && val >this.val){
-            // å·¦é€’å½’
+            // ×óµİ¹é
             return this.right.searchNode(val);
         }else{
             return null;
         }
     }
 
-    // æ·»åŠ ç»“ç‚¹çš„æ–¹æ³•
+    // Ìí¼Ó½áµãµÄ·½·¨
     public void addNode(Node node) {
         if (node == null) {
-            // ç»“ç‚¹ä¸ºç©ºï¼Œè¿”å›
+            // ½áµãÎª¿Õ£¬·µ»Ø
             return;
         }
 
         if (node.val < this.val) {
-            // åŠ å…¥ç»“ç‚¹æ¯”å½“å‰ç»“ç‚¹å°
+            // ¼ÓÈë½áµã±Èµ±Ç°½áµãĞ¡
             if (this.left == null) {
                 this.left = node;
             } else {
-                // å½“å‰ç»“ç‚¹å·¦ç»“ç‚¹ä¸ä¸ºç©º
+                // µ±Ç°½áµã×ó½áµã²»Îª¿Õ
                 this.left.addNode(node);
             }
         } else {
-            // åŠ å…¥èŠ‚ç‚¹æ¯”å½“å‰ç»“ç‚¹å¤§æˆ–è€…ç­‰
+            // ¼ÓÈë½Úµã±Èµ±Ç°½áµã´ó»òÕßµÈ
             if (this.right == null) {
                 this.right = node;
             } else {
-                // å½“å‰ç»“ç‚¹å³ç»“ç‚¹ä¸ä¸ºç©º
+                // µ±Ç°½áµãÓÒ½áµã²»Îª¿Õ
                 this.right.addNode(node);
             }
         }
     }
 
-    // æŸ¥æ‰¾è¦åˆ é™¤çš„ç»“ç‚¹
+    // ²éÕÒÒªÉ¾³ıµÄ½áµã
 
 
-    // ä¸­åºéå†
+    // ÖĞĞò±éÀú
     public void infixOrder(){
         if(this.left != null){
             this.left.infixOrder();
