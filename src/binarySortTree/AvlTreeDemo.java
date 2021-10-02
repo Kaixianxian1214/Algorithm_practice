@@ -2,7 +2,7 @@ package binarySortTree;
 
 public class AvlTreeDemo {
     public static void main(String[] args) {
-        int[] array = {4, 3, 6 ,5 ,7, 8};
+        int[] array = {4, 3, 6 ,5 ,7, 8, 1};
         AVLTree tree = new AVLTree();
         for(int i : array){
             tree.addNode(i);
