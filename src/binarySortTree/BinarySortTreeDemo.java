@@ -46,7 +46,6 @@ class BinarySortTree{
             if(target.val == root.val){
                 // 是头结点
                 root = null;
-                return;
             }else if(parent.left.val == target.val){
                 // 是父结点的左孩子
                 parent.left = null;
@@ -193,9 +192,6 @@ class Node {
             }
         }
     }
-
-    // 查找要删除的结点
-
 
     // 中序遍历
     public void infixOrder(){
