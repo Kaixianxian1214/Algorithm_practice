@@ -13,7 +13,7 @@ public class Search {
         System.out.println("所要查找的index为：" + binarySearch2(array, 0, array.length - 1, 11));
     }
 
-    // 二分查找--非递归方法--只找一个
+    // 二分查找--递归方法--只找一个
     public static int binarySearch1(int[] array, int left, int right, int findVal) {
         if (left > right) {
             // 未找到
@@ -30,7 +30,7 @@ public class Search {
         }
     }
 
-    // 二分查找--非递归--找出所有的index
+    // 二分查找--递归--找出所有的index
     // 存在一个问题，这种方法找出来的index并不是按照index从小到大排序的
     public static ArrayList<Integer> binarySearch2(int[] array, int left, int right, int findVal) {
         if (left > right) {
