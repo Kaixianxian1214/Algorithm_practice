@@ -12,15 +12,15 @@ public class Horse {
         }
     }
 
-    public static int X = 8;     // è¡¨ç¤ºæ£‹ç›˜çš„è¡Œ
-    public static int Y = 8;     // è¡¨ç¤ºæ£‹ç›˜çš„åˆ—
-    public static boolean[][] isVisited = new boolean[X][Y];    // æ ‡è®°æ£‹ç›˜ä¸ŠæŸç‚¹æ˜¯å¦è¢«è®¿é—®
+    public static int X = 8;     // ±íÊ¾ÆåÅÌµÄĞĞ
+    public static int Y = 8;     // ±íÊ¾ÆåÅÌµÄÁĞ
+    public static boolean[][] isVisited = new boolean[X][Y];    // ±ê¼ÇÆåÅÌÉÏÄ³µãÊÇ·ñ±»·ÃÎÊ
     public static int[][] chessBoard = new int[X][Y];
     public static boolean isFinished;
 
     //
     public static void solution(int row, int col, int step){
-        // é¦–å…ˆè·å¾—å½“å‰ä½ç½®èƒ½å¤Ÿèµ°é€šçš„ä¸‹ä¸€æ­¥
+        // Ê×ÏÈ»ñµÃµ±Ç°Î»ÖÃÄÜ¹»×ßÍ¨µÄÏÂÒ»²½
         chessBoard[row][col] = step;
         isVisited[row][col] = true;
         ArrayList<Point> next = next(new Point(row, col));
@@ -32,7 +32,7 @@ public class Horse {
             }
         }
         if(step < X*Y && !isFinished){
-            // å›æº¯
+            // »ØËİ
             chessBoard[row][col] = 0;
             isVisited[row][col] = false;
         }else{
@@ -40,7 +40,7 @@ public class Horse {
         }
     }
 
-    // è¿”å›å½“å‰ç‚¹èƒ½å¤Ÿèµ°é€šçš„ç‚¹
+    // ·µ»Øµ±Ç°µãÄÜ¹»×ßÍ¨µÄµã
     public static ArrayList<Point> next(Point curPoint){
         ArrayList<Point> pointList = new ArrayList<>();
         if(curPoint.x + 2 < Y && curPoint.y + 1 < X){
