@@ -71,12 +71,7 @@ public class Horse {
     }
 
     public static void sort(ArrayList<Point> pointList){
-        pointList.sort(new Comparator<Point>() {
-            @Override
-            public int compare(Point o1, Point o2) {
-                return next(o1).size() - next(o2).size();
-            }
-        });
+        pointList.sort(Comparator.comparingInt(o -> next(o).size()));
     }
 }
 
