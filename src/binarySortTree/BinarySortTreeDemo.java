@@ -82,7 +82,7 @@ class BinarySortTree{
                 parent.right = target.right;
             }
         }else{
-            // 删除的结点既有左子结点，又有右子结点 --> 找到target的最左子结点来替换
+            // 删除的结点既有左子结点，又有右子结点 --> 找到target的最右左子结点来替换
             Node temp = target.left;
             while(temp.right != null){
                 temp = temp.right;

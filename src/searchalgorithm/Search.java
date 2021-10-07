@@ -6,10 +6,10 @@ public class Search {
     public static void main(String[] args) {
         int[] array = {1, 8, 10, 17, 99, 102};
 
-//        // test 二分查找--非递归--只找一个
+//        // test 二分查找--递归--只找一个
 //        System.out.println("所要查找的index为："+binarySearch1(array, 0, array.length - 1, -1));
 
-        // test 二分查找--非递归--找出所有的index
+        // test 二分查找--递归--找出所有的index
         System.out.println("所要查找的index为：" + binarySearch2(array, 0, array.length - 1, 11));
     }
 

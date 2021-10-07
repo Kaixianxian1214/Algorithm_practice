@@ -3,12 +3,12 @@ package sparsearray;
 public class SparseArray {
 
 	public static void main(String[] args) {
-		// 创建原始的二维数组
-		// 0黑色，1蓝色
+		// ??????????????
+		// 0?????1???
 		int chessArr1[][] = new int[11][11];
 		chessArr1[1][2] = 1;
 		chessArr1[2][3] = 2;
-		// 输出原始的二维数组
+		// ?????????????
 		for(int[] row : chessArr1) {
 			for(int i : row) {
 				System.out.printf("%d\t", i);
@@ -16,8 +16,8 @@ public class SparseArray {
 			System.out.print("\n");
 		}
 		
-		// 二维数组转稀疏矩阵
-		// 1、先遍历二维数组 得到非0数据的个数
+		// ??????????????
+		// 1?????????????? ?????0????????
 		
 		int sum = 0;
 		for(int[] row : chessArr1) {
@@ -29,7 +29,7 @@ public class SparseArray {
 		}
 		
 		
-		//转换为稀疏矩阵
+		//??????????
 		int sparseArr1[][] = new int [sum+1][3];
 		sparseArr1[0][0] = chessArr1.length;            // row
 		sparseArr1[0][1] = chessArr1[0].length;         // col
@@ -51,7 +51,7 @@ public class SparseArray {
 			System.out.printf("%d\t%d\t%d\n", sparseArr1[i][0], sparseArr1[i][1], sparseArr1[i][2]);
 		}
 		
-		//将稀疏数组转换为原始数组
+		//???????????????????
 		
 		int chessArr2[][] = new int[sparseArr1[0][0]][sparseArr1[0][1]];
 		

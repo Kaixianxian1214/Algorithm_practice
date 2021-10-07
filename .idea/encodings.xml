@@ -22,6 +22,7 @@
     <file url="file://$PROJECT_DIR$/src/queue/ArrayQueue.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/searchalgorithm/Search.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/sortalgorithm/Sort.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/sparsearray/SparseArray.java" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
