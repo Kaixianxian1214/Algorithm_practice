@@ -1,28 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
-    <file url="file://$PROJECT_DIR$/src/algorithm/Dynamic.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/algorithm/HanoiTower.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/algorithm/Horse.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/algorithm/ViolentMatch.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/algorithm/test.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/arraystack/ArrayStackDemo1.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/arraystack/Calculator.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/arraystack/InfixToSuffix.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/arraystack/PolandCal.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/binarySortTree/AvlTreeDemo.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/binarySortTree/BinarySortTreeDemo.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/binaryTree/BinaryTreeDemo.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/binaryTree/HuffmanCodeDemo.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/binaryTree/ThreadedBinaryTreeDemo.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/graph/GraphDemo.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/hashTable/HashTableDemo.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/linkedlist/DoubleLinkedList_Test.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/linkedlist/SingleLinkedList_Test.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/queue/ArrayQueue.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/searchalgorithm/Search.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/sortalgorithm/Sort.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/sparsearray/SparseArray.java" charset="GBK" />
+  <component name="Encoding">
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
